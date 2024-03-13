@@ -1,1 +1,3 @@
-from . import sale_order
+from . import commission_mixin
+from . import res_partner
+
