@@ -14,7 +14,8 @@
     ],
     "data": [
         "data/default_rec_commission05.xml",
-        "views/res_partner.xml"
+        "views/res_partner.xml",
+        "views/sale_order.xml"
     ],
     "installable": True,
 }
