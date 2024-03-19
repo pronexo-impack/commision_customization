@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import models
-from odoo.exceptions import ValidationError
+
 
 class CommissionMixinExtended(models.AbstractModel):
     _inherit = "commission.mixin"
@@ -15,7 +15,6 @@ class CommissionMixinExtended(models.AbstractModel):
         return {"agent_id": agent.id, "commission_id": commission_id}
 
     def _prepare_agents_vals_partner(self, partner, settlement_type=None):
-        """Utility method for getting agents creation dictionary of a partner."""
         agents = partner.agent_ids
         comercial_id = self.order_id.user_id.commercial_partner_id
         commission_05id = self.env["commission"].search(
