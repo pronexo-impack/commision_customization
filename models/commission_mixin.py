@@ -16,7 +16,10 @@ class CommissionMixinExtended(models.AbstractModel):
 
     def _prepare_agents_vals_partner(self, partner, settlement_type=None):
         agents = partner.agent_ids
-        comercial_id = self.order_id.user_id.commercial_partner_id
+        if 'order_id' not in self and 'move_id' in self:
+            comercial_id = self.move_id.invoice_user_id.commercial_partner_id
+        else:
+            comercial_id = self.order_id.user_id.commercial_partner_id
         commission_05id = self.env["commission"].search(
             [("name", "=", "Commission 0.5%"), ("fix_qty", "=", "0.5")], limit=1, order="id desc"
         )
