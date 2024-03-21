@@ -10,7 +10,4 @@ class SaleOrderExtended(models.AbstractModel):
         if all_records:
             for rec in all_records:
                 if rec.partner_id.agent_ids:
-                    if rec.partner_id.agent_ids[0].generic_agent:
-                        rec.write({"partner_id": rec.partner_id.id})
-                    else:
-                        pass
+                    rec.write({"partner_id": rec.partner_id.id})

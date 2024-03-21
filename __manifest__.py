@@ -3,7 +3,7 @@
 # Copyright 2014-2022 Tecnativa - Pedro M. Baeza
 {
     "name": "Sales commissions Extended",
-    "version": "16.0.1.0.1",
+    "version": "16.0.1.0.2",
     "category": "Sales Management",
     "license": "AGPL-3",
     "depends": [

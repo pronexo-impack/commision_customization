@@ -8,10 +8,11 @@
       <xpath expr="//tree" position="inside">
         <header>
           <button name="changeClient05"
-            string="Cambiar a Commission 0.5%"
+            string="Recalcular Comision"
             icon="fa-users"
             type="object"
             class="btn btn-primary"
+            group="base.group_system"
           />
         </header>
       </xpath>
