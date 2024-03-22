@@ -10,4 +10,7 @@ class SaleOrderExtended(models.AbstractModel):
         if all_records:
             for rec in all_records:
                 if rec.partner_id.agent_ids:
+                    if rec.invoice_ids:  ##* SI TIENE UNA FACTURA RELACIONADA CAMBIA LOS AGENTES COMISIONADOS DE ESA FACTURA
+                        for m in rec.invoice_ids:
+                            m.write({"partner_id": m.partner_id.id})
                     rec.write({"partner_id": rec.partner_id.id})
